@@ -1,0 +1,25 @@
+def caesar_cipher(text, shift):
+    # Initialize the ciphertext
+    ciphertext = ''
+    
+    # Iterate over each character in the plaintext
+    for char in text:
+        # Apply the Caesar cipher shift to the character
+        if char.isalpha():
+            # Determine the base index for the character based on its case
+            if char.isupper():
+                base = ord('A')
+            else:
+                base = ord('a')
+            # Apply the shift and wrap around the alphabet
+            index = (ord(char) - base + shift) % 26 + base
+            # Convert the index back to a character
+            ciphertext += chr(index)
+        else:
+            # Non-alphabetic characters are left unchanged
+            ciphertext += char
+    
+    # Return the ciphertext
+    return ciphertext
+
+caesar_cipher('Hello, World!', 3)

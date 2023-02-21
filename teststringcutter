@@ -1,0 +1,13 @@
+def cut_string(string, delimiter):
+    # Find the index of the delimiter in the string
+    delimiter_index = string.find(delimiter)
+
+    # If the delimiter isn't found, return the original string
+    if delimiter_index == -1:
+        return string
+
+    # Otherwise, return the part of the string before the delimiter
+    return string[:delimiter_index]
+
+binary_msg = cut_string('011010000110010101101100011011000110111100100011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011011', '00100011')
+print(binary_msg)
